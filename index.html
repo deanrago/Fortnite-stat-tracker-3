@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines the document type and version as HTML5 -->
     <meta charset="UTF-8">
+    <!-- Ensures proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortnite Game Stats</title>
+    <!-- Sets the page title that appears in the browser tab -->
+    <title>I'm Bustin' It</title>
+    <!-- Links to the external CSS file, connecting this HTML to the styling in "style.css" -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header section at the top of the page -->
     <header>
-        <h1>Fortnite Game Stats Tracker</h1>
+        <h1>Fortnite Stats Tracker</h1>
     </header>
 
+    <!-- Main content of the page -->
     <main>
+        <!-- Section to show custom AKPG stats (probably filled by JavaScript later) -->
         <section id="akpg-header">
-            <div id="afz1219-akpg">AFZ1219 AKPG: Loading...</div>
-            <div id="lisan-akpg">Lisan-Al-Gaib AKPG: Loading...</div>
+            <h2>Key Stats</h2>
+            <!-- Placeholder for Ariel's AKPG score, which is populated later by JavaScript -->
+                <table>
+                    <tr>
+                        <td>
+                            <img src="ariel-face.png" alt="Icon" class="small-image">
+                        </td>
+                        <td>    
+                            <div id="afz1219-akpg">AFZ1219 AKPG: Loading...</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="dean-velcro.png" alt="Icon" class="small-image">
+                        </td>
+                        <td>
+                            <div id="lisan-akpg">Lisan-Al-Gaib AKPG: Loading...</div>
+                        </td>
+                    </tr>
+                </table>   
+                            <!-- Placeholder for Lisan's AKPG score, also populated by JavaScript -->
         </section>
 
+        <!-- Form section to enter game stats manually -->
         <section id="stat-entry">
-            <h2>Enter Your Stats</h2>
+            <h2>Enter Stats</h2>
+            <!-- Form to collect stats. Will be handled by JavaScript when submitted -->
             <form id="statsForm">
                 <div class="form-group">
+                    <!-- Input for the game ID (required field) -->
                     <label for="gameId">Game ID:</label>
                     <input type="text" id="gameId" required>
                     
+                    <!-- Input for placement (required field) -->
                     <label for="placement">Placement:</label>
                     <input type="number" id="placement" required>
                 </div>
                 
                 <div class="form-group">
+                    <!-- Dropdown to select the player's gamertag. JavaScript uses this data -->
                     <label for="gamertag">Gamertag:</label>
                     <select id="gamertag" required>
                         <option value="AFZ1219">Ariel (AFZ1219)</option>
                         <option value="Lisan-Al-Gaib">Lisan-Al-Gaib (Lisan-Al-Gaib)</option>
                     </select>
 
+                    <!-- Dropdown to select the landing zone. JavaScript records this stat -->
                     <label for="landingZone">Landing Zone:</label>
                     <select id="landingZone" required>
                         <option value="Lone Lodge">Lone Lodge</option>
+                        <!-- Additional landing zones. JavaScript will store the selected zone -->
                         <option value="Snobby Shoals">Snobby Shoals</option>
                         <option value="Pleasant Park">Pleasant Park</option>
                         <option value="Tilted Towers">Tilted Towers</option>
@@ -50,34 +83,42 @@
                 </div>
 
                 <div class="form-group">
+                    <!-- Input for kills (required field) -->
                     <label for="kills">Kills:</label>
                     <input type="number" id="kills" required>
 
+                    <!-- Input for assists (required field) -->
                     <label for="assists">Assists:</label>
                     <input type="number" id="assists" required>
                 </div>
 
                 <div class="form-group">
+                    <!-- Input for damage dealt to players (required field) -->
                     <label for="damage">Damage to Players:</label>
                     <input type="number" id="damage" required>
                 </div>
 
+                <!-- Submit button. JavaScript will listen for this button to trigger actions -->
                 <button type="submit">Submit Stats</button>
             </form>
         </section>
 
+        <!-- Section where combined game stats will be shown after submission -->
         <section id="game-stats">
-            <h2>Game Stats</h2>
+            <h2>Session Log</h2>
+            <!-- Container where JavaScript will inject the combined stats -->
             <div id="statsContainer">
                 <p>Submit your stats to see the combined results.</p>
             </div>
         </section>
     </main>
 
+    <!-- Footer at the bottom of the page -->
     <footer>
-        <p>&copy; 2024 Fortnite Stats Tracker</p>
+        <p>&copy; 2024 Bustin' It Web Design</p>
     </footer>
 
+    <!-- Links the external JavaScript file. This script runs once the HTML loads -->
     <script type="module" src="script.js"></script>
 </body>
 </html>

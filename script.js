@@ -129,3 +129,5 @@ async function calculateAkpg() {
 // Load all game stats and AKPG on page load
 loadAllGameStats();
 calculateAkpg();
+
+
